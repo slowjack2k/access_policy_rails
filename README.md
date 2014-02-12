@@ -1,6 +1,6 @@
 # AccessPolicyRails [![Code Climate](https://codeclimate.com/github/slowjack2k/access_policy_rails.png)](https://codeclimate.com/github/slowjack2k/access_policy_rails) [![Build Status](https://travis-ci.org/slowjack2k/access_policy_rails.png?branch=master)](https://travis-ci.org/slowjack2k/access_policy_rails) [![Coverage Status](https://coveralls.io/repos/slowjack2k/access_policy_rails/badge.png?branch=master)](https://coveralls.io/r/slowjack2k/access_policy_rails?branch=master) [![Gem Version](https://badge.fury.io/rb/access_policy_rails.png)](http://badge.fury.io/rb/access_policy_rails)
 
-Rails extension for [![AccessPolicy](https://github.com/slowjack2k/access_policy_rails)]. Stores the policy_check_user (default current_user)
+Rails extension for [AccessPolicy](https://github.com/slowjack2k/access_policy). Stores the policy_check_user (default current_user)
 in a RequestLocalStorage. So it is not needed to pass the user around.
 
 Further more some macros are provided to query permissions and protect actions.
