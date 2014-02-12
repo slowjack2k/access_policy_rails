@@ -26,6 +26,14 @@ Or install it yourself as:
   class DummyController < ActionController::Base
     attr_accessor :current_user
 
+    # instead of
+    #
+    # def create
+    # end
+    #
+    # def show
+    # end
+
     guarded_action :create do
 
     end
