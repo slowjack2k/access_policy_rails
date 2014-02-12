@@ -24,7 +24,7 @@ Or install it yourself as:
 ```ruby
 
   class DummyController < ActionController::Base
-    attr_accessor :current_user
+    # ... typical controller stuff
 
     # instead of
     #
