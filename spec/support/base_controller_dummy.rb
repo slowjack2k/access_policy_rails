@@ -13,7 +13,7 @@ class BaseControllerDummy
   end
 
   def self.policy_class
-    Struct.new(:current_user, :controller) do
+    @policy_class ||= Struct.new(:current_user, :controller) do
       def create?
         current_user && current_user.create_allowed?
       end

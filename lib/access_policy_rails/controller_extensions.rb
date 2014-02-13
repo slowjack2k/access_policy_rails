@@ -12,8 +12,10 @@ module AccessPolicyRails
        hide_action :policy_check_user
        hide_action :authorize
        hide_action :policy_for
+       hide_action :policy
 
        helper_method :policy_for
+       helper_method :policy
 
      end
 
@@ -26,8 +28,12 @@ module AccessPolicyRails
     end
 
     def policy_for(object_to_guard=self)
+      PolicyWrapper.new(policy(object_to_guard))
+    end
+
+    def policy(object_to_guard=self)
       _guard.send(:switched_user_or_role, policy_check_user) do
-        PolicyWrapper.new(_guard.policy_for(object_to_guard))
+         _guard.policy_for(object_to_guard)
       end
     end
 

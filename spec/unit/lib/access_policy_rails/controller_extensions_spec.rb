@@ -85,5 +85,11 @@ module AccessPolicyRails
         expect(subject.new(user).policy_for).to be_kind_of PolicyWrapper
       end
     end
+
+    describe '#policy' do
+      it 'returns a policy' do
+        expect(subject.new(user).policy).to be_kind_of subject.policy_class
+      end
+    end
   end
 end
