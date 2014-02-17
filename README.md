@@ -26,6 +26,9 @@ Or install it yourself as:
   class DummyController < ActionController::Base
     # ... typical controller stuff
 
+    around_action :wrap_with_transaction # in case AccessPolicy::AuthorizeNotCalledError is raised, better tested in spec's that this does not happen
+
+
     # instead of
     #
     # def create
@@ -40,6 +43,14 @@ Or install it yourself as:
 
     guarded_action :show do
 
+    end
+
+    protected
+
+    def wrap_with_transaction
+      ActiveRecord::Base.transaction do
+        yield
+      end
     end
   end
 
